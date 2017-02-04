@@ -9,7 +9,7 @@ export default class Board extends React.Component {
         <table>
           <thead>
           <tr>
-            <th>#</th>
+            <th>Position</th>
             <th>Camper Name</th>
             <th>Points in past 30 days</th>
             <th>All the Points</th>
@@ -19,10 +19,12 @@ export default class Board extends React.Component {
           { this.props.recent.map(function(user, index){
                 return(
                   <tr key={ user.username }>
-                  <td>{index + 1}</td>
+                  <td>#{index + 1}</td>
                   <td>
+                  <a href={'https://www.freecodecamp.com/' + user.username} >
                   <img src={ user.img } className="profilePic" />
                   <span className="userName">{ user.username }</span>
+                  </a>
                   </td>
                   <td>{ user.recent }</td>
                   <td>{ user.alltime }</td>

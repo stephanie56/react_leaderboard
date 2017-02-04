@@ -14,5 +14,8 @@
 - Hint: To get the top 100 campers of all time: https://fcctop100.herokuapp.com/api/fccusers/top/alltime.
 
 ## Task Breakdown
-- [ ] Break the app into different components
-- [ ] Use external link to get JSON and show result 
+- [x] Break the app into different components
+- [x] Fetch data from the recent list
+- [x] Set default state === recent data
+- [x] Fetch data from the alltime list
+- [ ] If user toggle, update data to the alltime list

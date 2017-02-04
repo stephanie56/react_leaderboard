@@ -5,9 +5,7 @@ body {
 
 a {
   color: inherit;
-  font-weight: bold;
   text-decoration: none;
-  background-color: #F5F5F5;
 }
 
 h1 {
@@ -30,15 +28,25 @@ table, th, td {
 
 th, td {
   padding:20px;
-  text-align: center;
+  vertical-align: middle;
+}
+
+td {
+  position: relative;
 }
 
 .userName {
-  margin-top:5px;
-  display: block;
+  font-size: 1em;
+  position: absolute;
+  top:20px;
+  left:60px;
 }
 
 .profilePic {
-  width:50px;
-  border-radius: 100%;
+  width:30px;
+  border-radius: 10%;
+  margin-right:10px;
+  position: absolute;
+  top:15px;
+  left:20px;
 }
