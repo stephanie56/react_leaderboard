@@ -9,3 +9,30 @@ a {
   text-decoration: none;
   background-color: #F5F5F5;
 }
+
+h1 {
+  text-align: center;
+}
+
+#header {
+  text-align: center;
+}
+
+.row {
+  border:1px solid black;
+  padding: 20px;
+  width:40%;
+  margin:10px auto;
+}
+
+.info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profilepic {
+  width:50px;
+  border-radius: 100%;
+  display:block;
+  margin:0 auto;
+}
