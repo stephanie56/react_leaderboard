@@ -9,7 +9,8 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state={
-      data:[]
+      recent:[],
+      alltime:[]
     }
   }
 
@@ -21,7 +22,15 @@ export default class App extends React.Component {
         .then(function(result){
           _this.setState({
             // ** important: the return 'result' is not an array but an object. To return the anticipated array of user object, should ask for result.data
-            data: result.data
+            recent: result.data
+          });
+        });
+    this.serverRequest =
+      axios
+        .get('')
+        .then(function(result){
+          _this.setState({
+            alltime: result.data
           });
         });
   }
@@ -30,12 +39,11 @@ export default class App extends React.Component {
     this.serverRequest.abort();
   }
 
-
   render() {
     return (
       <div id="app">
         <Header logo="freeCodeCamp" />
-        <Board title="Leaderboard" data={this.state.data}/>
+        <Board title="Leaderboard" recent={this.state.recent} />
         <Footer author="Stephanie Zeng" />
       </div>
     )
