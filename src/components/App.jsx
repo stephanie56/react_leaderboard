@@ -6,44 +6,45 @@ import Board from 'components/Board.jsx';
 import Footer from 'components/Footer.jsx';
 
 export default class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state={
-      recent:[],
-      alltime:[]
+      data: [],
     }
+
+    // Bind methods to component instance.
+    this.handleData = this.handleData.bind(this);
   }
 
   componentDidMount(){
-    var _this = this;
-    this.serverRequest =
-      axios
-        .get('https://fcctop100.herokuapp.com/api/fccusers/top/recent')
-        .then(function(result){
-          _this.setState({
-            // ** important: the return 'result' is not an array but an object. To return the anticipated array of user object, should ask for result.data
-            recent: result.data
-          });
-        });
-    this.serverRequest =
-      axios
-        .get('')
-        .then(function(result){
-          _this.setState({
-            alltime: result.data
-          });
-        });
+      this.handleData('alltime');
   }
 
   componentWillUnmount(){
     this.serverRequest.abort();
   }
 
+
+  handleData(key) {
+    axios
+      .get('https://fcctop100.herokuapp.com/api/fccusers/top/' + key)
+      .then((res) => {
+        this.setState({
+          data: res.data
+        });
+      })
+      .catch((err) => {
+        console.log(err.response.data)
+      })
+  }
+
   render() {
     return (
       <div id="app">
         <Header logo="freeCodeCamp" />
-        <Board title="Leaderboard" recent={this.state.recent} />
+        <button type="button" onClick={() => {this.handleData('recent')}}>Last 30</button>
+        <button type="button" onClick={() => {this.handleData('alltime')}}>All Time</button>
+        <Board title="Leaderboard" data={this.state.data} />
         <Footer author="Stephanie Zeng" />
       </div>
     )

@@ -16,7 +16,7 @@ export default class Board extends React.Component {
           </tr>
           </thead>
           <tbody>
-          { this.props.recent.map(function(user, index){
+          { this.props.data.map(function(user, index){
                 return(
                   <tr key={ user.username }>
                   <td>#{index + 1}</td>
