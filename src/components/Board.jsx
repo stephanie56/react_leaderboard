@@ -7,8 +7,10 @@ export default class Board extends React.Component {
       <h1>{ this.props.title }</h1>
       <div>{ this.props.data.map(function(user){
           return(
-            <div key={user.username}>
-              {user.username}
+            <div key={user.username} className="row">
+              <img src={user.img} className="profilepic"/>
+              <div className="info">
+              {user.username}: {user.recent} brownies</div>
             </div>
           )
         }) }</div>
@@ -16,7 +18,3 @@ export default class Board extends React.Component {
     )
   }
 }
-
-// Board.propTypes = {
-//   data: React.PropTypes.array
-// };

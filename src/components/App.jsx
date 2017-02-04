@@ -20,7 +20,8 @@ export default class App extends React.Component {
         .get('https://fcctop100.herokuapp.com/api/fccusers/top/recent')
         .then(function(result){
           _this.setState({
-            data: result
+            // ** important: the return 'result' is not an array but an object. To return the anticipated array of user object, should ask for result.data
+            data: result.data
           });
         });
   }
