@@ -20,7 +20,10 @@ export default class Board extends React.Component {
                 return(
                   <tr key={ user.username }>
                   <td>{index + 1}</td>
-                  <td>{ user.username }</td>
+                  <td>
+                  <img src={ user.img } className="profilePic" />
+                  <span className="userName">{ user.username }</span>
+                  </td>
                   <td>{ user.recent }</td>
                   <td>{ user.alltime }</td>
                   </tr>
