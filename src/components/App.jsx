@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Header from 'components/Header.jsx';
 import Board from 'components/Board.jsx';
+import Tab from 'components/Tab.jsx';
 import Footer from 'components/Footer.jsx';
 
 export default class App extends React.Component {
@@ -17,7 +18,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount(){
-      this.handleData('alltime');
+    this.handleData('alltime');
   }
 
   componentWillUnmount(){
@@ -42,8 +43,7 @@ export default class App extends React.Component {
     return (
       <div id="app">
         <Header logo="freeCodeCamp" />
-        <button type="button" onClick={() => {this.handleData('recent')}}>Last 30</button>
-        <button type="button" onClick={() => {this.handleData('alltime')}}>All Time</button>
+        <Tab handleData={this.handleData.bind(this)}/>
         <Board title="Leaderboard" data={this.state.data} />
         <Footer author="Stephanie Zeng" />
       </div>
