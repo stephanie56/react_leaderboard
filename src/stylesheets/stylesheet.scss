@@ -61,6 +61,24 @@ td {
   left:20px;
 }
 
+#tab-wrapper {
+  position: absolute;
+  top:0;
+  right:40px;
+}
+
+.tabs{
+  display:inline-block;
+  padding:20px 26px;
+  background-color: #4e8c71;
+  cursor: pointer;
+  margin-left: 1px;
+}
+
+.tabs:hover{
+  background-color:#547f6c;
+}
+
 #footer {
   width:100%;
   text-align: center;

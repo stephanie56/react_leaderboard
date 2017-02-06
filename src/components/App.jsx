@@ -44,7 +44,7 @@ export default class App extends React.Component {
       <div id="app">
         <Header logo="freeCodeCamp" />
         <Tab handleData={this.handleData.bind(this)}/>
-        <Board title="Leaderboard" data={this.state.data} />
+        <Board title="Camper Leaderboard" data={this.state.data} />
         <Footer author="Stephanie Zeng" />
       </div>
     )
